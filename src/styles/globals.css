@@ -78,8 +78,8 @@ body {
   }
 
   .animate-on-scroll {
-    animation: slideUpFade 0.8s ease-out forwards;
     opacity: 0;
+    transform: translateY(40px);
   }
 
   .animate-on-scroll.in-view {
@@ -87,8 +87,8 @@ body {
   }
 
   .animate-on-scroll-left {
-    animation: slideLeftFade 0.8s ease-out forwards;
     opacity: 0;
+    transform: translateX(-40px);
   }
 
   .animate-on-scroll-left.in-view {
@@ -96,8 +96,8 @@ body {
   }
 
   .animate-on-scroll-right {
-    animation: slideRightFade 0.8s ease-out forwards;
     opacity: 0;
+    transform: translateX(40px);
   }
 
   .animate-on-scroll-right.in-view {
@@ -105,8 +105,8 @@ body {
   }
 
   .animate-on-scroll-scale {
-    animation: scaleIn 0.8s ease-out forwards;
     opacity: 0;
+    transform: scale(0.95);
   }
 
   .animate-on-scroll-scale.in-view {
