@@ -100,6 +100,152 @@ body {
   }
 }
 
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUpFadeAlt {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes statsPulse {
+  0%, 100% {
+    transform: scale(1);
+    text-shadow: 0 0 0 rgba(26, 115, 232, 0);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 20px rgba(26, 115, 232, 0.5);
+  }
+}
+
+@keyframes cardFlip {
+  0% {
+    transform: rotateY(0deg) scale(0.9);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes waveBar {
+  0% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lineGrow {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes shimmerWave {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulsing {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+@keyframes floatingHero {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  33% {
+    transform: translateY(-20px);
+  }
+  66% {
+    transform: translateY(-10px);
+  }
+}
+
 @keyframes ledGlow1 {
   0% {
     box-shadow: none;
@@ -445,5 +591,64 @@ body {
 
   .app-glow-3 {
     animation: appGlow3 6s ease-in-out infinite;
+  }
+
+  .animate-bounce {
+    animation: bounce 1s infinite;
+  }
+
+  /* Stats Animation */
+  .stats-pulse {
+    animation: statsPulse 2s ease-in-out infinite;
+  }
+
+  /* Testimonials Animation */
+  .card-flip {
+    animation: cardFlip 0.8s ease-out forwards;
+  }
+
+  /* FAQ Animations */
+  .faq-slide-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+  }
+
+  .faq-slide-right {
+    animation: slideInRight 0.6s ease-out forwards;
+  }
+
+  /* Skills Animations */
+  .skill-bar-wave {
+    animation: waveBar 1.2s ease-out forwards;
+    transform-origin: left;
+  }
+
+  .tech-stack-bounce {
+    animation: bounceIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  /* Process Animation */
+  .process-step-bounce {
+    animation: bounceIn 0.7s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+  }
+
+  .process-line {
+    animation: lineGrow 1s ease-in-out forwards;
+  }
+
+  /* Pricing Animation */
+  .pricing-card-shimmer {
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    background-size: 1000px 100%;
+    animation: shimmerWave 3s infinite;
+  }
+
+  /* Newsletter Animation */
+  .newsletter-pulse {
+    animation: pulsing 3s ease-in-out infinite;
+  }
+
+  /* Hero Floating */
+  .hero-floating {
+    animation: floatingHero 4s ease-in-out infinite;
   }
 }
