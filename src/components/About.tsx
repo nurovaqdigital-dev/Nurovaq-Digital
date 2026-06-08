@@ -1,6 +1,30 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import AnimatedSection from './AnimatedSection'
 
 export default function About() {
+  const [valuesInView, setValuesInView] = useState(false)
+  const valuesRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setValuesInView(entry.isIntersecting)
+      },
+      { threshold: 0.3 }
+    )
+
+    if (valuesRef.current) {
+      observer.observe(valuesRef.current)
+    }
+
+    return () => {
+      if (valuesRef.current) {
+        observer.unobserve(valuesRef.current)
+      }
+    }
+  }, [])
   const values = [
     {
       icon: '🚀',
@@ -91,14 +115,14 @@ export default function About() {
           <AnimatedSection animation="fade-up">
             <h3 className="text-2xl font-bold mb-8 text-center">Our Core Values</h3>
           </AnimatedSection>
-          <div className="grid md:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-4 gap-6" ref={valuesRef}>
             {values.map((value, idx) => (
               <AnimatedSection
                 key={idx}
                 animation="scale"
                 delay={idx * 100}
               >
-                <div className="bg-white rounded-xl p-6 text-center">
+                <div className={`bg-white rounded-xl p-6 text-center ${valuesInView ? `value-glow-${idx + 1}` : ''}`}>
                   <div className="text-4xl mb-3">{value.icon}</div>
                   <h4 className="font-bold text-lg mb-2">{value.title}</h4>
                   <p className="text-gray-600">{value.description}</p>

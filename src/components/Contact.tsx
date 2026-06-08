@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import AnimatedSection from './AnimatedSection'
 
 export default function Contact() {
@@ -12,6 +12,27 @@ export default function Contact() {
   })
 
   const [submitted, setSubmitted] = useState(false)
+  const [formInView, setFormInView] = useState(false)
+  const formRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setFormInView(entry.isIntersecting)
+      },
+      { threshold: 0.3 }
+    )
+
+    if (formRef.current) {
+      observer.observe(formRef.current)
+    }
+
+    return () => {
+      if (formRef.current) {
+        observer.unobserve(formRef.current)
+      }
+    }
+  }, [])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -46,7 +67,7 @@ export default function Contact() {
           </AnimatedSection>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto" ref={formRef}>
           <AnimatedSection animation="slide-left">
             <div>
               <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
@@ -99,7 +120,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 form-input form-input-led-1 rounded-lg"
+                  className={`w-full px-4 py-2 form-input ${formInView ? 'form-input-led-1' : ''} rounded-lg`}
                   placeholder="Your name"
                 />
               </div>
@@ -115,7 +136,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 form-input form-input-led-2 rounded-lg"
+                  className={`w-full px-4 py-2 form-input ${formInView ? 'form-input-led-2' : ''} rounded-lg`}
                   placeholder="your@email.com"
                 />
               </div>
@@ -130,7 +151,7 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 form-input form-input-led-3 rounded-lg"
+                  className={`w-full px-4 py-2 form-input ${formInView ? 'form-input-led-3' : ''} rounded-lg`}
                   placeholder="Your company"
                 />
               </div>
@@ -146,7 +167,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 form-input form-input-led-4 rounded-lg"
+                  className={`w-full px-4 py-2 form-input ${formInView ? 'form-input-led-4' : ''} rounded-lg`}
                   placeholder="Tell us about your project..."
                 />
               </div>

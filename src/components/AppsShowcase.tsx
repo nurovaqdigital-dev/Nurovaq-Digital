@@ -1,6 +1,30 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import AnimatedSection from './AnimatedSection'
 
 export default function AppsShowcase() {
+  const [appsInView, setAppsInView] = useState(false)
+  const appsRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setAppsInView(entry.isIntersecting)
+      },
+      { threshold: 0.3 }
+    )
+
+    if (appsRef.current) {
+      observer.observe(appsRef.current)
+    }
+
+    return () => {
+      if (appsRef.current) {
+        observer.unobserve(appsRef.current)
+      }
+    }
+  }, [])
   const apps = [
     {
       id: 1,
@@ -41,14 +65,14 @@ export default function AppsShowcase() {
           </AnimatedSection>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-8" ref={appsRef}>
           {apps.map((app, idx) => (
             <AnimatedSection
               key={app.id}
               animation="scale"
               delay={idx * 150}
             >
-              <div className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow h-full">
+              <div className={`bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow h-full ${appsInView ? `app-glow-${idx + 1}` : ''}`}>
                 <div className="mb-4">
                   <span className="inline-block bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-semibold">
                     {app.status}
