@@ -20,6 +20,50 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeftFade {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRightFade {
+  from {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @layer components {
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -31,5 +75,41 @@ body {
 
   .gradient-text {
     @apply bg-gradient-to-r from-primary to-blue-600 bg-clip-text text-transparent;
+  }
+
+  .animate-on-scroll {
+    animation: slideUpFade 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-on-scroll.in-view {
+    animation: slideUpFade 0.8s ease-out forwards;
+  }
+
+  .animate-on-scroll-left {
+    animation: slideLeftFade 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-on-scroll-left.in-view {
+    animation: slideLeftFade 0.8s ease-out forwards;
+  }
+
+  .animate-on-scroll-right {
+    animation: slideRightFade 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-on-scroll-right.in-view {
+    animation: slideRightFade 0.8s ease-out forwards;
+  }
+
+  .animate-on-scroll-scale {
+    animation: scaleIn 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-on-scroll-scale.in-view {
+    animation: scaleIn 0.8s ease-out forwards;
   }
 }
