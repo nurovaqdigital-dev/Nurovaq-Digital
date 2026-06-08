@@ -122,7 +122,10 @@ export default function About() {
                 animation="scale"
                 delay={idx * 100}
               >
-                <div className={`bg-white rounded-xl p-6 text-center ${valuesInView ? `value-glow-${idx + 1}` : ''}`}>
+                <div 
+                  className="bg-white rounded-xl p-6 text-center"
+                  style={valuesInView ? { animation: `valueGlow${idx + 1} 6s ease-in-out infinite` } : {}}
+                >
                   <div className="text-4xl mb-3">{value.icon}</div>
                   <h4 className="font-bold text-lg mb-2">{value.title}</h4>
                   <p className="text-gray-600">{value.description}</p>

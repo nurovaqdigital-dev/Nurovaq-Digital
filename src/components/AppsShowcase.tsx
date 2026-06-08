@@ -72,7 +72,10 @@ export default function AppsShowcase() {
               animation="scale"
               delay={idx * 150}
             >
-              <div className={`bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow h-full ${appsInView ? `app-glow-${idx + 1}` : ''}`}>
+              <div 
+                className="bg-white border-2 border-gray-200 rounded-xl p-8 hover:shadow-xl transition-shadow h-full"
+                style={appsInView ? { animation: `appGlow${idx + 1} 6s ease-in-out infinite` } : {}}
+              >
                 <div className="mb-4">
                   <span className="inline-block bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-semibold">
                     {app.status}
