@@ -100,6 +100,81 @@ body {
   }
 }
 
+@keyframes ledGlow1 {
+  0% {
+    box-shadow: none;
+  }
+  10% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  20% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  30% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes ledGlow2 {
+  0% {
+    box-shadow: none;
+  }
+  30% {
+    box-shadow: none;
+  }
+  40% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  60% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes ledGlow3 {
+  0% {
+    box-shadow: none;
+  }
+  60% {
+    box-shadow: none;
+  }
+  70% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  80% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  90% {
+    box-shadow: none;
+  }
+  100% {
+    box-shadow: none;
+  }
+}
+
+@keyframes ledGlow4 {
+  0% {
+    box-shadow: none;
+  }
+  85% {
+    box-shadow: none;
+  }
+  90% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+}
+
 @layer components {
   .container-custom {
     @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8;
@@ -171,5 +246,39 @@ body {
     height: 100%;
     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
     animation: shine 3s infinite;
+  }
+
+  /* LED Glow Input Styles */
+  .form-input {
+    @apply border-2 border-gray-300 transition-all duration-300;
+  }
+
+  .form-input:focus {
+    @apply outline-none border-primary;
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
+  }
+
+  .form-input-led-1 {
+    animation: ledGlow1 6s ease-in-out infinite;
+  }
+
+  .form-input-led-2 {
+    animation: ledGlow2 6s ease-in-out infinite;
+  }
+
+  .form-input-led-3 {
+    animation: ledGlow3 6s ease-in-out infinite;
+  }
+
+  .form-input-led-4 {
+    animation: ledGlow4 6s ease-in-out infinite;
+  }
+
+  .form-input-led-1:focus,
+  .form-input-led-2:focus,
+  .form-input-led-3:focus,
+  .form-input-led-4:focus {
+    animation: none;
+    box-shadow: 0 0 25px rgba(26, 115, 232, 1), inset 0 0 25px rgba(26, 115, 232, 0.5);
   }
 }

@@ -99,7 +99,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2 form-input form-input-led-1 rounded-lg"
                   placeholder="Your name"
                 />
               </div>
@@ -115,7 +115,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2 form-input form-input-led-2 rounded-lg"
                   placeholder="your@email.com"
                 />
               </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                   name="company"
                   value={formData.company}
                   onChange={handleChange}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2 form-input form-input-led-3 rounded-lg"
                   placeholder="Your company"
                 />
               </div>
@@ -146,7 +146,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={4}
-                  className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:border-primary"
+                  className="w-full px-4 py-2 form-input form-input-led-4 rounded-lg"
                   placeholder="Tell us about your project..."
                 />
               </div>
