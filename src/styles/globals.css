@@ -113,8 +113,11 @@ body {
   30% {
     box-shadow: none;
   }
-  100% {
+  85% {
     box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -134,8 +137,11 @@ body {
   60% {
     box-shadow: none;
   }
-  100% {
+  85% {
     box-shadow: none;
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -152,11 +158,11 @@ body {
   80% {
     box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
   }
-  90% {
+  85% {
     box-shadow: none;
   }
   100% {
-    box-shadow: none;
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.8), inset 0 0 20px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -188,8 +194,11 @@ body {
   37% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
   }
-  100% {
+  85% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -209,8 +218,11 @@ body {
   75% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
   }
-  100% {
+  85% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -228,7 +240,7 @@ body {
     box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
   100% {
-    box-shadow: 0 0 0 rgba(26, 115, 232, 0);
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -257,8 +269,11 @@ body {
   50% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
   }
-  100% {
+  85% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
 }
 
@@ -275,8 +290,11 @@ body {
   83% {
     box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
-  100% {
+  85% {
     box-shadow: 0 0 0 rgba(26, 115, 232, 0);
+  }
+  100% {
+    box-shadow: 0 0 20px rgba(26, 115, 232, 0.6), 0 0 40px rgba(26, 115, 232, 0.3);
   }
 }
 
