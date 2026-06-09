@@ -123,4 +123,4 @@ This project is private and proprietary to Nurovaq Digital.
 
 ---
 
-Built with ❤️ by Nurovaq Digital
+Built with ❤️ by Nurovaq Digital (Auto-sync active)
